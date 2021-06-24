@@ -9,7 +9,7 @@ void	print_combn(char	*num, int	num_size,	int	index,	char	digit)
 	}
 	else
 	{
-		while (digit <= '9')
+		while (digit - '0' <= (10 - num_size) + index)
 		{
 			num[index] = digit;
 			print_combn(num, num_size, index + 1, digit + 1);
