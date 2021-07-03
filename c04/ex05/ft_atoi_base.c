@@ -46,7 +46,7 @@ int	ft_atoi_base(char	*str, char	*base)
 {
 	int		idx;
 	int		nbr;
-	char	signal;
+	char	sign;
 	int		base_len;
 
 	base_len = ft_getbase_len(base);
@@ -55,11 +55,11 @@ int	ft_atoi_base(char	*str, char	*base)
 	idx = 0;
 	while (ft_chk_whitespace(str[idx]))
 		++idx;
-	signal = 1;
+	sign = 1;
 	while (str[idx] == '+' || str[idx] == '-')
 	{
 		if (str[idx] == '-')
-			signal *= -1;
+			sign *= -1;
 		++idx;
 	}
 	nbr = 0;
@@ -68,5 +68,5 @@ int	ft_atoi_base(char	*str, char	*base)
 		nbr = (nbr * base_len) + ft_chk_char(str[idx], base);
 		++idx;
 	}
-	return (nbr * signal);
+	return (nbr * sign);
 }
