@@ -30,7 +30,7 @@ void	ft_putchar(char	c)
 void	ft_put_conv(unsigned int	nbr, char	*base, unsigned int	*base_len)
 {	
 	if (nbr >= *base_len)
-		ft_put_conv((nbr / *len, base), base_len);
+		ft_put_conv((nbr / *base_len), base, base_len);
 	ft_putchar(base[nbr % *base_len]);
 }
 
