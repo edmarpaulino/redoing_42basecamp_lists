@@ -16,12 +16,12 @@ void	ft_putaddr_hex(size_t addr, char	*hex)
 	write(1, ": ", 2);
 }
 
-void	ft_putline_hex(unsigned char	*line, unsigned int line_size, char	*hex)
+void	ft_putline_hex(unsigned char	*line, unsigned int size, char	*hex)
 {
 	unsigned int	idx;
 
 	idx = 0;
-	while (idx < line_size)
+	while (idx < size)
 	{
 		write(1, hex + (line[idx] / 16), 1);
 		write(1, hex + (line[idx] % 16), 1);
@@ -36,12 +36,12 @@ void	ft_putline_hex(unsigned char	*line, unsigned int line_size, char	*hex)
 	}
 }
 
-void	ft_putline_ascii(unsigned char	*line, unsigned int	line_size)
+void	ft_putline_ascii(unsigned char	*line, unsigned int	size)
 {
 	unsigned int	idx;
 
 	idx = 0;
-	while (idx < line_size)
+	while (idx < size)
 	{
 		if (line[idx] >= 32 && line[idx] <= 126)
 			write(1, &line[idx], 1);
